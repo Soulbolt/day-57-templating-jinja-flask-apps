@@ -1,0 +1,15 @@
+{% extends "index.html" %}
+{% block title %}Index{% endblock %}
+{% block head %}
+{{ super() }}
+<style type="text/css">
+    .important {
+        color: #336699;
+    }
+</style>
+{% endblock %}
+{% block content %}
+<h1>Hey {{ name }},</h1>
+<h2>I think you are a {{ gender }},</h2>
+<h3>And maybe {{ age }} years old.</h3>
+{% endblock %}
