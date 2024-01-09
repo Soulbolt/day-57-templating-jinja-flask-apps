@@ -1,0 +1,18 @@
+{% extends "index.html" %}
+{% block title %}Blog{% endblock %}
+{% block head %}
+{{ super() }}
+<style type="text/css">
+    .important {
+        color: #336699;
+    }
+</style>
+{% endblock %}
+{% block content %}
+    {% for blog_post in posts: %}
+        {% if blog_post["id"] == 2: %}
+        <h1>{{ blog_post["title"] }}</h1>
+        <h2>{{ blog_post["subtitle"] }}</h2>
+        {% endif %}
+    {% endfor %}
+{% endblock %}

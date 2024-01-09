@@ -6,7 +6,7 @@ import json
 
 GENDERIZE_API_ENDPOINT = "https://api.genderize.io?name="
 AGIFY_API_ENDPOINT = "https://api.agify.io?name="
-BLOG_API_ENDPOINT = "https://api.npoint.io/5abcca6f4e39b4955965"
+BLOG_API_ENDPOINT = "https://api.npoint.io/c790b4d5cab58020d391"
 # name = "Cesar"
 # response = requests.get(url=GENDERIZE_API_URL+name)
 # response.raise_for_status
@@ -30,8 +30,8 @@ def guess_name(name):
     age = json.loads(agify_response.content)["age"]
     return render_template("guess.html", name=name, gender=gender, age=age)
 
-@app.route("/blog")
-def blog():
+@app.route("/blog/<num>")
+def get_blog(num):
     response = requests.get(BLOG_API_ENDPOINT)
     response.raise_for_status
     all_post = response.json()
